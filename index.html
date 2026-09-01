@@ -193,6 +193,9 @@
       border: 1px solid var(--lilas-200);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
     }
     
     .book-card:hover {
@@ -202,38 +205,20 @@
     
     .book-cover {
       width: 100%;
-      height: 300px;
+      height: 340px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
+      background: #f5f0f8;
     }
     
-    .book-cover.c1 { background: linear-gradient(160deg, #e0d4f0 0%, #c8b0e0 50%, #b090d0 100%); }
-    .book-cover.c2 { background: linear-gradient(160deg, #d8c8e8 0%, #c0a0d8 50%, #a880c8 100%); }
-    .book-cover.c3 { background: linear-gradient(160deg, #e8d8f0 0%, #d0b8e0 50%, #b898d0 100%); }
-    .book-cover.c4 { background: linear-gradient(160deg, #d0c0e0 0%, #b8a0d0 50%, #a080c0 100%); }
-    .book-cover.c5 { background: linear-gradient(160deg, #c8b8d8 0%, #b098c8 50%, #9878b8 100%); }
-    .book-cover.c6 { background: linear-gradient(160deg, #ddd0ec 0%, #c5b0dc 50%, #ad90cc 100%); }
-    .book-cover.c7 { background: linear-gradient(160deg, #e5d5f0 0%, #cdb5e0 50%, #b595d0 100%); }
-    
-    .book-cover::before {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      top: -30px;
-      right: -20px;
-    }
-    
-    .book-emoji {
-      font-size: 56px;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.08));
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     
     .book-info { padding: 18px; }
@@ -268,6 +253,24 @@
       font-style: italic;
     }
     
+    .buy-badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #ff9900, #ff6600);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    
+    .buy-badge:hover {
+      opacity: 0.9;
+    }
+    
     .footer {
       text-align: center;
       padding: 40px 24px 50px;
@@ -290,8 +293,7 @@
     
     @media (max-width: 640px) {
       .book-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .book-cover { height: 200px; }
-      .book-emoji { font-size: 40px; }
+      .book-cover { height: 240px; }
       .book-title { font-size: 16px; }
       .book-info { padding: 12px; }
       .about { padding: 40px 0 28px; }
@@ -374,49 +376,52 @@
         <p class="works-label">§ Obras · Livros publicados</p>
         <h2 class="works-title">Uma pequena biblioteca de mão.</h2>
         <p class="works-subtitle">Sete livros publicados. Cinco de autoria própria, dois em parceria como ilustradora.</p>
-        <p class="works-hint">Toque para abrir o objeto.</p>
+        <p class="works-hint">Toque para comprar na Amazon.</p>
       </div>
 
       <div class="book-grid">
-        <article class="book-card">
-          <div class="book-cover c1">
-            <span class="book-emoji">🌧️</span>
+        <a href="https://amzn.eu/d/01kBjbPl" target="_blank" rel="noopener" class="book-card">
+          <div class="book-cover">
+            <img src="imagens/as_luzes_da_chuva.jpg" alt="Capa do livro As luzes da chuva">
           </div>
           <div class="book-info">
             <p class="book-num">№ 01 · Autoria</p>
             <h3 class="book-title">As luzes da chuva</h3>
             <p class="book-author">por Marylelin Lelinsky</p>
             <p class="book-desc">Poesia visual reunida a partir do blog pessoal. Um livro para se ler descalço.</p>
+            <span class="buy-badge">🛒 Comprar na Amazon</span>
           </div>
-        </article>
+        </a>
 
-        <article class="book-card">
-          <div class="book-cover c2">
-            <span class="book-emoji">🌫️</span>
+        <a href="https://amzn.eu/d/0c630o78" target="_blank" rel="noopener" class="book-card">
+          <div class="book-cover">
+            <img src="imagens/alma_na_neblina.jpg" alt="Capa do livro Alma na neblina">
           </div>
           <div class="book-info">
             <p class="book-num">№ 02 · Autoria</p>
             <h3 class="book-title">Alma na neblina</h3>
             <p class="book-author">por Marylelin Lelinsky</p>
             <p class="book-desc">«Desabafos terapêuticos» — a obra de estreia, poesia e imagem que se dissolvem na bruma.</p>
+            <span class="buy-badge">🛒 Comprar na Amazon</span>
           </div>
-        </article>
+        </a>
 
-        <article class="book-card">
-          <div class="book-cover c3">
-            <span class="book-emoji">🌸</span>
+        <a href="https://amzn.eu/d/0haBNxFK" target="_blank" rel="noopener" class="book-card">
+          <div class="book-cover">
+            <img src="imagens/saudade_e_nome_de_flor.jpg" alt="Capa do livro Saudade é nome de flor">
           </div>
           <div class="book-info">
             <p class="book-num">№ 03 · Autoria</p>
             <h3 class="book-title">Saudade é nome de flor</h3>
             <p class="book-author">por Marylelin Lelinsky</p>
             <p class="book-desc">Um herbário de afetos, nascido de um pequeno luto de verão.</p>
+            <span class="buy-badge">🛒 Comprar na Amazon</span>
           </div>
-        </article>
+        </a>
 
         <article class="book-card">
-          <div class="book-cover c4">
-            <span class="book-emoji">🎵</span>
+          <div class="book-cover" style="background: linear-gradient(160deg, #d0c0e0 0%, #b8a0d0 50%, #a080c0 100%);">
+            <span style="font-size:56px;position:relative;z-index:1;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.08));">🎵</span>
           </div>
           <div class="book-info">
             <p class="book-num">№ 04 · Ilustração</p>
@@ -426,21 +431,22 @@
           </div>
         </article>
 
-        <article class="book-card">
-          <div class="book-cover c5">
-            <span class="book-emoji">🕰️</span>
+        <a href="https://amzn.eu/d/08Km8ufv" target="_blank" rel="noopener" class="book-card">
+          <div class="book-cover">
+            <img src="imagens/o_sonho_dos_mortos.jpg" alt="Capa do livro O sonho dos mortos">
           </div>
           <div class="book-info">
             <p class="book-num">№ 05 · Autoria</p>
             <h3 class="book-title">O sonho dos mortos</h3>
             <p class="book-author">por Marylelin Lelinsky</p>
             <p class="book-desc">«Onde o tempo ainda nos mastiga» — narrativa onírica sobre o subconsciente e a melancolia.</p>
+            <span class="buy-badge">🛒 Comprar na Amazon</span>
           </div>
-        </article>
+        </a>
 
         <article class="book-card">
-          <div class="book-cover c6">
-            <span class="book-emoji">✨</span>
+          <div class="book-cover" style="background: linear-gradient(160deg, #ddd0ec 0%, #c5b0dc 50%, #ad90cc 100%);">
+            <span style="font-size:56px;position:relative;z-index:1;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.08));">✨</span>
           </div>
           <div class="book-info">
             <p class="book-num">№ 06 · Ilustração</p>
@@ -450,17 +456,18 @@
           </div>
         </article>
 
-        <article class="book-card">
-          <div class="book-cover c7">
-            <span class="book-emoji">👢</span>
+        <a href="https://amzn.eu/d/0iJrZrde" target="_blank" rel="noopener" class="book-card">
+          <div class="book-cover">
+            <img src="imagens/bota_ceu_melancias.jpg" alt="Capa do livro O que faz uma bota no céu das melancias?">
           </div>
           <div class="book-info">
             <p class="book-num">№ 07 · Autoria</p>
             <h3 class="book-title">O que faz uma bota no céu das melancias?</h3>
             <p class="book-author">por Marylelin Lelinsky</p>
             <p class="book-desc">Literatura infantil onde o impossível encontra casa no céu.</p>
+            <span class="buy-badge">🛒 Comprar na Amazon</span>
           </div>
-        </article>
+        </a>
       </div>
     </section>
   </div>
@@ -472,4 +479,5 @@
 
 </body>
 </html>
+
 
