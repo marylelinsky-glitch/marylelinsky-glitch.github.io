@@ -1,0 +1,399 @@
+Aqui está o código completo. Toque no bloco, depois em "Selecionar tudo" e "Copiar":
+:root {
+  --lilas-50: #faf5fc;
+  --lilas-100: #f3e8f7;
+  --lilas-200: #e8d5f0;
+  --lilas-300: #d4b8e4;
+  --lilas-400: #b88dd0;
+  --lilas-500: #9a6bb8;
+  --lilas-600: #7d4e9a;
+  --lilas-700: #62397d;
+  --lilas-800: #4a2c5e;
+  --lilas-900: #361d45;
+  --text-main: #3d2b4a;
+  --text-soft: #6b4f7a;
+  --text-muted: #9a7aaa;
+  --text-light: #b8a0c8;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--lilas-50);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+.hero {
+  width: 100%;
+  min-height: 380px;
+  background: linear-gradient(160deg, #e8d5f2 0%, #d4b8e8 30%, #c9a8e0 60%, #b895d4 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  top: -180px;
+  right: -120px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  bottom: -80px;
+  left: 80px;
+}
+
+.hero-illustration {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 700px;
+  height: 160px;
+  margin-bottom: 24px;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 7vw, 64px);
+  font-weight: 500;
+  color: var(--lilas-900);
+  letter-spacing: 2px;
+  line-height: 1.05;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: var(--lilas-700);
+  margin-top: 14px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--lilas-600);
+  margin-top: 10px;
+}
+
+.hero-location {
+  font-size: 12px;
+  color: var(--lilas-500);
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.about {
+  padding: 56px 0 36px;
+  text-align: center;
+}
+
+.about-object {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--lilas-600);
+  margin-bottom: 6px;
+}
+
+.about-desc {
+  font-size: 15px;
+  color: var(--text-soft);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.about-location {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 16px;
+  letter-spacing: 1.5px;
+}
+
+.works { padding: 36px 0 60px; }
+
+.works-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.works-label {
+  font-size: 11px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.works-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--lilas-800);
+}
+
+.works-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.works-hint {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.book-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--lilas-200);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(106, 60, 130, 0.12);
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-cover.c1 { background: linear-gradient(160deg, #e0d4f0 0%, #c8b0e0 50%, #b090d0 100%); }
+.book-cover.c2 { background: linear-gradient(160deg, #d8c8e8 0%, #c0a0d8 50%, #a880c8 100%); }
+.book-cover.c3 { background: linear-gradient(160deg, #e8d8f0 0%, #d0b8e0 50%, #b898d0 100%); }
+.book-cover.c4 { background: linear-gradient(160deg, #d0c0e0 0%, #b8a0d0 50%, #a080c0 100%); }
+.book-cover.c5 { background: linear-gradient(160deg, #c8b8d8 0%, #b098c8 50%, #9878b8 100%); }
+.book-cover.c6 { background: linear-gradient(160deg, #ddd0ec 0%, #c5b0dc 50%, #ad90cc 100%); }
+.book-cover.c7 { background: linear-gradient(160deg, #e5d5f0 0%, #cdb5e0 50%, #b595d0 100%); }
+
+.book-cover::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  top: -30px;
+  right: -20px;
+}
+
+.book-emoji {
+  font-size: 56px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.08));
+}
+
+.book-info { padding: 18px; }
+
+.book-num {
+  font-size: 10px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.book-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--lilas-800);
+  line-height: 1.25;
+}
+
+.book-author {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.book-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 10px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 24px 50px;
+  border-top: 1px solid var(--lilas-200);
+}
+
+.footer-text {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--lilas-600);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .book-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .book-cover { height: 200px; }
+  .book-emoji { font-size: 40px; }
+  .book-title { font-size: 16px; }
+  .book-info { padding: 12px; }
+  .about { padding: 40px 0 28px; }
+  .works { padding: 28px 0 40px; }
+  .hero { min-height: 300px; padding: 40px 20px 30px; }
+}
+
+@media (max-width: 400px) {
+  .book-grid { grid-template-columns: 1fr; }
+}
+
+<section class="works">
+  <div class="works-header">
+    <p class="works-label">§ Obras · Livros publicados</p>
+    <h2 class="works-title">Uma pequena biblioteca de mão.</h2>
+    <p class="works-subtitle">Sete livros publicados. Cinco de autoria própria, dois em parceria como ilustradora.</p>
+    <p class="works-hint">Toque para abrir o objeto.</p>
+  </div>
+
+  <div class="book-grid">
+    <article class="book-card">
+      <div class="book-cover c1">
+        <span class="book-emoji">🌧️</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 01 · Autoria</p>
+        <h3 class="book-title">As luzes da chuva</h3>
+        <p class="book-author">por Marylelin Lelinsky</p>
+        <p class="book-desc">Poesia visual reunida a partir do blog pessoal. Um livro para se ler descalço.</p>
+      </div>
+    </article>
+
+    <article class="book-card">
+      <div class="book-cover c2">
+        <span class="book-emoji">🌫️</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 02 · Autoria</p>
+        <h3 class="book-title">Alma na neblina</h3>
+        <p class="book-author">por Marylelin Lelinsky</p>
+        <p class="book-desc">«Desabafos terapêuticos» — a obra de estreia, poesia e imagem que se dissolvem na bruma.</p>
+      </div>
+    </article>
+
+    <article class="book-card">
+      <div class="book-cover c3">
+        <span class="book-emoji">🌸</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 03 · Autoria</p>
+        <h3 class="book-title">Saudade é nome de flor</h3>
+        <p class="book-author">por Marylelin Lelinsky</p>
+        <p class="book-desc">Um herbário de afetos, nascido de um pequeno luto de verão.</p>
+      </div>
+    </article>
+
+    <article class="book-card">
+      <div class="book-cover c4">
+        <span class="book-emoji">🎵</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 04 · Ilustração</p>
+        <h3 class="book-title">Margarida e a sinfonia da planície</h3>
+        <p class="book-author">de Ana Gomes · ilustrado por Marylelin</p>
+        <p class="book-desc">Uma menina, uma planície inteira e a música que só ela ouve.</p>
+      </div>
+    </article>
+
+    <article class="book-card">
+      <div class="book-cover c5">
+        <span class="book-emoji">🕰️</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 05 · Autoria</p>
+        <h3 class="book-title">O sonho dos mortos</h3>
+        <p class="book-author">por Marylelin Lelinsky</p>
+        <p class="book-desc">«Onde o tempo ainda nos mastiga» — narrativa onírica sobre o subconsciente e a melancolia.</p>
+      </div>
+    </article>
+
+    <article class="book-card">
+      <div class="book-cover c6">
+        <span class="book-emoji">✨</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 06 · Ilustração</p>
+        <h3 class="book-title">Duas irmãs</h3>
+        <p class="book-author">de Diana de Bastos Couto · ilustrado por Marylelin</p>
+        <p class="book-desc">Primeira colaboração profissional: capa e ilustração de um romance.</p>
+      </div>
+    </article>
+
+    <article class="book-card">
+      <div class="book-cover c7">
+        <span class="book-emoji">👢</span>
+      </div>
+      <div class="book-info">
+        <p class="book-num">№ 07 · Autoria</p>
+        <h3 class="book-title">O que faz uma bota no céu das melancias?</h3>
+        <p class="book-author">por Marylelin Lelinsky</p>
+        <p class="book-desc">Literatura infantil onde o impossível encontra casa no céu.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+----
+Como colar no GitHub (iPad):
+1.  Copie o código acima (toque no bloco → "Selecionar tudo" → "Copiar")
+2.  Vá ao Safari e acesse github.com → faça login
+3.  No repositório marylelinsky.com, toque em "Add file" → "Create new file"
+4.  Cole o código (toque na caixa de texto → "Colar")
+5.  Em cima, onde diz "Name your file...", escreva: index.html
+6.  Desça e toque em "Commit new file"
+Pronto! O site já está no GitHub. Agora ative o GitHub Pages em Settings → Pages e configure o domínio marylelinsky.com como expliquei antes.
